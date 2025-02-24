@@ -1,0 +1,28 @@
+{
+  "name": "to-css-variables",
+  "version": "1.0.0",
+  "description": "A utility function to convert nested objects into CSS variable declarations.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/einarlove/to-css-variables.git"
+  },
+  "keywords": [
+    "css-variables",
+    "typescript",
+    "theming",
+    "utility"
+  ],
+  "author": "Einar Løve <git@einarlove.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
