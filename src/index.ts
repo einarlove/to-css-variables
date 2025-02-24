@@ -150,20 +150,20 @@ type KebabCaseDigitGroup<S extends string> = S extends `${infer First}${infer Re
     : `${First}${KebabCase<Rest>}`
   : S
 
-/**
- * Flattens a nested object into a single-level object, where nested keys are joined with a separator or camelCased.
- * @param obj The input object, which can be nested. Each property value is treated as a string.
- * @param options An object containing optional settings:
- *               - `separator`: A string to join nested keys with. Defaults to `'-'`.
- *               - `prefix`: A string to prefix each key with. Defaults to `''`.
- *               - `rootKeys`: An optional array of strings representing keys to be treated as root-level variables.
- * @returns An object where each key is a flattened key and its value is the corresponding value.
- */
 
-type NestedObject = {
-  [key: string]: string | NestedObject
-}
+  type NestedObject = {
+    [key: string]: string | NestedObject
+  }
 
+  /**
+   * Flattens a nested object into a single-level object, where nested keys are joined with a separator or camelCased.
+   * @param obj The input object, which can be nested. Each property value is treated as a string.
+   * @param options An object containing optional settings:
+   *               - `separator`: A string to join nested keys with. Defaults to `'-'`.
+   *               - `prefix`: A string to prefix each key with. Defaults to `''`.
+   *               - `rootKeys`: An optional array of strings representing keys to be treated as root-level variables.
+   * @returns An object where each key is a flattened key and its value is the corresponding value.
+   */
 export function flattenVariables(
   obj: NestedObject,
   options?: { separator?: string; prefix?: string; rootKeys?: string[] },

@@ -1,5 +1,6 @@
 {
   "name": "to-css-variables",
+  "type": "module",
   "version": "1.0.0",
   "description": "A utility function to convert nested objects into CSS variable declarations.",
   "main": "dist/index.js",
