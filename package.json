@@ -11,6 +11,9 @@
     "prepublishOnly": "npm run build",
     "publish": "npm publish --access public"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/einarlove/to-css-variables.git"
