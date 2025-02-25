@@ -118,11 +118,16 @@ type Output<T extends CSSObject, P extends string = '', R extends string[] = str
 }
 
 function camelToKebabCase(str: string): string {
-  // Inserting a hyphen before numeric parts (e.g., gray890 -> gray-890)
-  return str
-    .replace(/(\d+)/g, '-$1')
-    .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-    .toLowerCase()
+  return (
+    str
+      // Replace whitespace with hyphen
+      .replace(/\s+/g, '-')
+      // Inserting a hyphen before numeric parts, but not if the number is at the start of the string
+      .replace(/(\d+)(?=[a-zA-Z])/g, '-$1')
+      // Insert hyphen between lowercase letters and uppercase letters
+      .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
+      .toLowerCase()
+  )
 }
 
 type KebabCase<S extends string> = S extends `${infer First}${infer Rest}`
